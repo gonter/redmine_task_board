@@ -249,7 +249,13 @@ var TaskBoardUtils = {
     });
 
     $(document).on('click', '#edit-issues', function() {
-      location.href = '/issues/bulk_edit?' + TaskBoardUtils.serializeCheckedButtons();
+      // called from projects/*/taskboard
+      location.href = '../../issues/bulk_edit?' + TaskBoardUtils.serializeCheckedButtons();
+    });
+
+    $(document).on('click', '#edit-my-issues', function() {
+      // called from my/taskboard
+      location.href = '../issues/bulk_edit?' + TaskBoardUtils.serializeCheckedButtons();
     });
 
     $(document).on('click', '#archive-issues', function() {
